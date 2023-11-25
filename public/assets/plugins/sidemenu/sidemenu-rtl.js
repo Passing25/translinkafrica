@@ -14,7 +14,7 @@ $(function() {
 			}
 		}
 	});
-	
+
 	$(document).on('click', '#mainSidebarToggle' ,function(event) {
 		event.preventDefault();
 		if (window.matchMedia('(min-width: 768px)').matches) {
@@ -32,8 +32,8 @@ $(function() {
 			$('body').removeClass('main-sidebar-open');
 		}
 	});
-	
-	
+
+
 	// ______________main-sidebar Active Class
 	function addActiveClass(element) {
 		if (current === "") {
@@ -54,17 +54,17 @@ $(function() {
 			}
 		}
 	}
-	var current = location.pathname.split("/").slice(-1)[0].replace(/^\/|\/$/g, '');
+    var current = location.pathname.split("/").slice(1).join('/')
 	$('.main-sidebar .nav li a').each(function() {
 		var $this = $(this);
 		addActiveClass($this);
 	});
-	
-	
+
+
 	/*---Scroling ---*/
 	//P-scroll
 	new PerfectScrollbar('.side-menu', {
 		suppressScrollX: true
 	});
-	
+
 });

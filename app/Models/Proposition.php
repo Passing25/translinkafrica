@@ -11,4 +11,12 @@ class proposition extends Model
     use HasFactory, HasUlids;
 
     protected $guarded = ['id'];
+
+    public function expedition() {
+        return $this->belongsTo(expeditions::class, 'id_expedition');
+    }
+
+    public function societe() {
+        return $this->belongsTo(Societe::class, 'id_societe');
+    }
 }

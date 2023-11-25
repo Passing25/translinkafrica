@@ -14,6 +14,7 @@ class LoginController extends Controller
     }
 
     public function connecter(Request $request) {
+
         $credentials = $request->validate(
             [
                 'email' => ['required', 'email'],
@@ -28,9 +29,15 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+            return redirect()->route('dashboard');
         }
 
         return redirect()->back()->with('error', 'Adress email ou mot de passe incorrect');
+    }
+
+    public function deconnecter() {
+        Auth::logout();
+        request()->session()->invalidate();
+        return redirect()->route('connexion');
     }
 }

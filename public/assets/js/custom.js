@@ -273,7 +273,7 @@ $(function () {
 
   $('.select2-no-search').select2({
     minimumResultsForSearch: Infinity,
-    placeholder: 'All categories',
+    placeholder: 'Sélectioner un rôle',
     width: '100%'
   }); // ______________Horizontal-menu Active Class
 

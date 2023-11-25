@@ -12,6 +12,9 @@ class Societe extends Model
 
     protected $guarded = ['id'];
 
+    public function expeditions(){
+        return $this->hasMany(expeditions::class, 'id_societe');
+    }
 
 }
 

@@ -29,7 +29,7 @@
 									<i class="fe fe-edit"></i> Edit Profile
 								</a>
 
-								<a class="dropdown-item" href="{{url('signin')}}">
+								<a class="dropdown-item" href="{{url('deconnexion')}}">
 									<i class="fe fe-power"></i> Sign Out
 								</a>
 							</div>

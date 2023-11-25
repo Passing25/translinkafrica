@@ -31,8 +31,13 @@
 			<div class="main-content side-content pt-0">
 				<div class="container-fluid">
 					<div class="inner-body">
-
-		@yield('content')
+						<div class="page-header">
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Tableau de bord</a></li>
+								<li class="breadcrumb-item active" aria-current="page">@yield('title')</li>
+							</ol>
+						</div>
+						@yield('content')
 
 					</div>
 				</div>
@@ -46,6 +51,7 @@
         <!-- End Page -->
 
         @include('layouts.partials.script')
+        @yield('additional-scripts')
 
 	</body>
 </html>
